@@ -1,0 +1,95 @@
+Paradigmas da programação
+
+Imperativo e Declarativo
+
+Imperativo: como você resolve os problemas
+Declarativo: Onde você vai fazer
+
+Na POO os programas são objetos que possuem uma serie de propriedades
+
+Pilares
+    Herança
+    Polimorfismo
+    Encapsulamento
+    Abstração
+
+- Pilares
+
+Abstração
+    Isolar aspecto do estado mais complexo
+    "Tornar o objeto mais simples"
+
+Herança
+    Objetos filhos herdam propriedades dos pais 
+
+Encapsulamento
+    Cada clase tem propriedades e metodos independente do restante
+
+Polimorfismo
+    Os metodos se comportam diferente dependendo da sua propriedade e construção
+
+
+----
+
+OOJS 
+    javascript orientado a objetos
+
+Prototipos
+    "Esqueleto" de todos os objetos
+        Base dos objetos
+    Eles definem o objeto desde seu ponto mais complexo até a raiz
+
+Classes
+    Syntatic sugar: uma sintaxe feita para facilitar a escrita
+
+old
+    var Meal = function(food){
+        this.food = food
+    }
+
+    Meal.prototype.eat = function() {
+        return 'nham'
+    }
+
+new
+    class Meal {
+        constructor (food) {
+            this.food = food
+        }
+        eat() {
+            return 'nham'
+        }
+    }
+
+
+Com isso o JS não possui classes nativamente, 
+todas as classes são objetos e a herança se dá por protótipos
+
+sintaticamente:
+
+construtor
+    constructor(type = 'animal') {
+        this.type = type
+    }
+
+getter e setter
+    get type () {
+        return this._type
+    }
+
+    set type(val) {
+        this._type = val.toUpperCase()
+    }
+
+
+Super()
+    class Cat extends Animal {
+        constructor() {
+            super('cat')
+        }
+
+        makeSound() {
+            super.makeSound()
+            console.log('Meow')
+        }
+    }
